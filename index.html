@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robot Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+     <div class="container">
+      <h1>{{ message }}</h1>
+      <div class="requests">
+      <div class="card" v-for="request in RobotRequest" :key="request.id" @click="selectRequest(request)">
+        <p>{{ request.Question }}</p>
+      </div>
+      </div>
+      <div class="answer-box"  v-if="selectedRequest">
+      <div class="card">
+        <p>{{ selectedRequest.Answer }}</p>
+        </div>
+    </div>
+   
+  </body>
+</html>
