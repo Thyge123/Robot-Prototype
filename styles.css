@@ -12,9 +12,14 @@ body {
 
 #app {
   margin: 0 auto;
-  max-width: 1200px;
+  width: 99%;
   padding: 2rem;
   font-weight: normal;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  min-height: 100vh;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .container {
@@ -23,6 +28,7 @@ body {
   align-items: center;
   gap: 20px;
   padding: 20px;
+  width: 100%;
 }
 
 .card {
@@ -38,13 +44,30 @@ body {
 .requests {
   display: flex;
   gap: 16px;
-  width: 100%;
+  width: 90%;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s, box-shadow 0.2s;
+  min-height: 140px;
+  align-items: center;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  overflow-x: auto;
 }
 
 .requests .card {
   margin: 0 0rem;
-  flex: 1;
+  flex: 0;
+  /*flex-grow: 1; If you want the cards to grow and fill the space */
   text-align: center;
   min-width: 8rem;
   width: 100%;
@@ -55,11 +78,12 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-4px);
   background-color: #fafafafa;
+  cursor: pointer;
 }
 
 .answer-box {
   margin-top: 2rem;
-  width: 100%;
+  width: 90%;
   height: 100%;
 }
 .answer-box .card {
