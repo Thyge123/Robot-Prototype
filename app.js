@@ -48,9 +48,20 @@ Vue.createApp({
       ],
       selectedRequest: null,
       timer: null,
+      voices: [],
     };
   },
+  created() {
+    // Load voices when they are available
+    if ("onvoiceschanged" in speechSynthesis) {
+      speechSynthesis.onvoiceschanged = this.loadVoices;
+    }
+    this.loadVoices(); // Initial load attempt
+  },
   methods: {
+    loadVoices() {
+      this.voices = speechSynthesis.getVoices();
+    },
     selectRequest(request) {
       this.selectedRequest = request;
       this.Speak(); // Call Speak method when a request is selected
@@ -68,8 +79,20 @@ Vue.createApp({
         : "No answer selected.";
 
       const utterance = new SpeechSynthesisUtterance(text);
-      const desiredLang = "en-US"; // Set desired language code
-      utterance.lang = desiredLang;
+
+      // Find and set a Google voice
+      const googleVoice = this.voices.find(
+        (voice) => voice.name.includes("Google") && voice.lang.startsWith("en")
+      );
+
+      if (googleVoice) {
+        utterance.voice = googleVoice;
+      } else {
+        // Fallback to desired language if Google voice not found
+        const desiredLang = "en-US";
+        utterance.lang = desiredLang;
+      }
+
       utterance.pitch = 1;
       utterance.rate = 1;
       utterance.volume = 1;
