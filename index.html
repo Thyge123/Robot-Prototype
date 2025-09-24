@@ -21,7 +21,7 @@
         <div class="ask-question-box">
           <p>Ask your own question</p>
           <textarea v-model="userQuestion" placeholder="Type your question here..."></textarea>
-          <button class="subtle-button" @click="logInteraction('askQuestion')">Submit</button>
+          <button class="submit-button">Submit</button>
         </div>
       </div>
       <div class="answer-box" v-if="selectedRequest">
@@ -29,6 +29,6 @@
         <p>{{ selectedRequest.Answer }}</p>
         </div>
     </div>
-    <button class="feedback-button" @click="logInteraction('feedback')">Are you missing a feature?</button>
+    <button class="feedback-button">Are you missing a feature?</button>
   </body>
 </html>
