@@ -69,9 +69,11 @@ body {
   flex: 0;
   /*flex-grow: 1; If you want the cards to grow and fill the space */
   text-align: center;
-  min-width: 8rem;
+  min-width: 10rem;
   width: 100%;
-  height: 120px;
+  height: 150px;
+
+  align-content: center;
 }
 
 .requests .card:hover {
