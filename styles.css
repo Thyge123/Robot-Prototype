@@ -100,3 +100,98 @@ body {
   background-color: #f0f0f0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.fake-door-features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  margin-top: 1rem;
+  align-items: flex-start;
+}
+
+.subtle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtle-button:hover {
+  background-color: #0056b3;
+}
+
+.ask-question-box {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ask-question-box p {
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.ask-question-box textarea {
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+  max-height: 500px;
+  resize: vertical;
+}
+
+.feedback-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.feedback-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+  .requests {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 500px;
+    overflow-y: scroll;
+  }
+
+  .requests .card {
+    width: 80%;
+    min-width: unset;
+  }
+
+  .fake-door-features {
+    flex-direction: column;
+    align-items: center;
+  }
+}

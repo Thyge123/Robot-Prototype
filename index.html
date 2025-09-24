@@ -17,11 +17,18 @@
         <p>{{ request.Question }}</p>
       </div>
       </div>
-      <div class="answer-box"  v-if="selectedRequest">
+      <div class="fake-door-features">
+        <div class="ask-question-box">
+          <p>Ask your own question</p>
+          <textarea v-model="userQuestion" placeholder="Type your question here..."></textarea>
+          <button class="subtle-button" @click="logInteraction('askQuestion')">Submit</button>
+        </div>
+      </div>
+      <div class="answer-box" v-if="selectedRequest">
       <div class="card">
         <p>{{ selectedRequest.Answer }}</p>
         </div>
     </div>
-   
+    <button class="feedback-button" @click="logInteraction('feedback')">Are you missing a feature?</button>
   </body>
 </html>
